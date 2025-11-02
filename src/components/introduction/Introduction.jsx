@@ -22,11 +22,10 @@ const informationSummaryData = [
 ];
 
 const getSunset = () => {
-  if (new Date().getHours() >= 0) {
+  const hour = new Date().getHours();
+  if (hour > 0 && hour < 12) {
     return "Bom dia"
-  } else if (
-    new Date().getHours() > 12 && new Date().getHours() < 18
-  ) {
+  } else if (hour >= 12 && hour < 18) {
     return "Boa tarde"
   } else {
     return "Boa noite"
@@ -42,13 +41,13 @@ const Introduction = () => {
       <div className="w-full flex flex-col justify-between max-lg:text-center">
         <div className="pt-13 me-31.5 w-full lg:w-auto transition-all duration-500">
           <p className="text-3xl xxs:text-4xl sm:max-xl:text-5xl xl:text-6xl font-semibold w-full">
-            Olá, {getSunset()} eu sou o 
+            {getSunset()} eu sou o 
             <span className="text-nowrap shrink-0 inline-block w-full">
               seu Freelancer
             </span>
           </p>
           <p className="text-xs xxs:text-lg lg:text-[18px] my-6">
-            Eu sou Guto Santana <span className="bg-highlight">UI/UX Designer, Social Media e Editor de Video</span>{" "}
+            Sou Guto Santana <span className="bg-highlight">UI/UX Designer, Social Media e Editor de Video</span>{" "}
             nasci e moro em São Paulo/Brasil. Eu me esforço para construir designs e interfaces acessivas, imersivas e 
             bonitas cuidadosamente elaborado e design centrado no usuário.
           </p>
